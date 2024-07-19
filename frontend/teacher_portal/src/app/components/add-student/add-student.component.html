@@ -1,0 +1,36 @@
+<!-- src/app/components/add-student/add-student.component.html -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light ps-2 pe-2 mb-4">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/">Logo</a>
+    <div class="d-flex align-items-center">
+      <span class="me-3">{{ teacherName }}</span>
+      <button class="btn btn-outline-danger" (click)="logout()">Logout</button>
+    </div>
+  </div>
+</nav>
+
+<div class="container m-auto mt-5 w-25">
+  <h2 class="lead fs-2 text-center">Add Student</h2>
+  <form (ngSubmit)="addStudent()" #studentForm="ngForm" class="needs-validation" novalidate>
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" id="name" name="name" [(ngModel)]="studentData.name" class="form-control" required>
+      <div class="invalid-feedback">Name is required.</div>
+    </div>
+ 
+    <div class="mb-3">
+      <label for="rollno" class="form-label">Roll Number</label>
+      <input type="text" id="rollno" name="rollno" [(ngModel)]="studentData.rollno" class="form-control" required>
+      <div class="invalid-feedback">Roll number is required.</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="subject" class="form-label">Subject</label>
+      <input type="text" id="subject" name="subject" [(ngModel)]="studentData.subject" class="form-control" required>
+      <div class="invalid-feedback">Subject is required.</div>
+    </div>
+
+    <button type="submit" class="btn btn-primary d-block m-auto" [disabled]="!studentForm.form.valid">Add Student</button>
+  </form>
+  <div *ngIf="error" class="alert alert-danger mt-3">{{ error }}</div>
+</div>

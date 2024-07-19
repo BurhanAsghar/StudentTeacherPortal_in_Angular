@@ -1,0 +1,31 @@
+<!-- src/app/components/login/login.component.html -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light ps-2 pe-2 mb-4">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/">Logo</a>
+    <div class="d-flex">
+      <a class="btn btn-outline-primary me-2" routerLink="/signup">Sign Up</a>
+      <a class="btn btn-outline-secondary" routerLink="/login">Login</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container mt-4">
+  <form (ngSubmit)="login()" #loginForm="ngForm" class="needs-validation" novalidate>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" id="email" name="email" class="form-control" [(ngModel)]="credentials.email" required>
+      <div class="invalid-feedback">
+        Please provide a valid email address.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" id="password" name="password" class="form-control" [(ngModel)]="credentials.password" required>
+      <div class="invalid-feedback">
+        Please provide a password.
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Login</button>
+    <div *ngIf="error" class="alert alert-danger mt-3">{{ error }}</div>
+  </form>
+</div>

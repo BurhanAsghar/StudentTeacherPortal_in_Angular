@@ -1,0 +1,33 @@
+h2 {
+   text-transform: uppercase;
+   margin-top: 25vh;
+}
+
+.main-content {
+    text-align: center;
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+    text-transform: uppercase;
+    text-rendering: optimizeLegibility;
+    color: #495057 !important;
+    letter-spacing: .5em;
+    text-shadow:
+       
+        -1px 1px 1px #495057,
+        -2px 2px 2px  #495057,
+        -3px 3px 3px  #495057,
+        -4px 4px 4px  #495057,
+        -5px 5px 5px  #495057,
+        -6px 6px 6px  #495057,
+        -7px 7px 7px  #495057
+}
+.main-content p span:after {
+    content: " ";
+    display: block;
+    margin: 10px auto;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    height: 5px;
+    width: 400px ;
+  background-color:#f8f8f8;
+}
+
